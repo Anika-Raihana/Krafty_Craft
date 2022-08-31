@@ -7,7 +7,7 @@
   <table class="table table-hover">
     <thead>
       <tr>
-        <th scope="col" width="15%">#</th>
+        <th scope="col" width="15%">No. of Items</th>
         <th scope="col">Product Name</th>
         <th scope="col">Quantity</th>
         <th scope="col" align="right">Price</th>
@@ -25,7 +25,7 @@
           <a class="mr-2" href="{% url 'App_Order:increase' pk=cart.item.pk %}"> <span class="badge badge-light"> <i class="fas fa-plus"></i></span></a>
         </td>
         <td align="right">&#2547; {{cart.get_total}}</td>
-        <td><a href="{% url 'App_Order:remove' pk=cart.item.pk %}" class="btn btn-danger btn-sm">Remove Items From Cart</a></td>
+        <td><a href="{% url 'App_Order:remove' pk=cart.item.pk %}" class="btn btn-danger btn-sm">Remove Item From Cart</a></td>
       </tr>
       {% endfor %}
       <tr>
@@ -38,7 +38,7 @@
         <th scope="row"></th>
         <td colspan="4" class="text-right">
           <a href="{% url 'App_Shop:home' %}" class="btn btn-warning mr-4">Continue Shopping</a>
-          <a href="#" class="btn btn-success mr-4">Proceed To Checkout</a>
+          <a href="{% url 'App_Payment:checkout' %}" class="btn btn-success mr-4">Checkout</a>
         </td>
       </tr>
     </tbody>
